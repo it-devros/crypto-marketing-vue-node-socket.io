@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <h1>Vue Vuex Seed Application</h1>
     <v-app>
       <router-view />
       <notifications group="main" position="bottom right" :speed="500" />

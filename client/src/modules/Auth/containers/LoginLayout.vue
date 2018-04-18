@@ -1,6 +1,6 @@
 <template>
-  <div class="dashboard-page-wrap">
-    <h2>Dashboard Layout</h2>
+  <div class="login-page-wrap">
+    <h2>Login Layout</h2>
     <div class="content-wrapper">
       <router-view />
     </div>
@@ -8,14 +8,15 @@
 </template>
 
 <script>
+
   export default {
-    name: 'DashboardLayout',
+    name: 'LoginLayout',
     components: {
     },
   };
 </script>
 
 <style lang="scss" scoped>
-  .dashboard-page-wrap {
+  .login-page-wrap {
   }
 </style>

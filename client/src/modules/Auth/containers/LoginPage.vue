@@ -1,12 +1,12 @@
 <template>
-  <div class='vv-dashboard-page'>
-    <h3>Dashboard Page</h3>
+  <div class='vv-login-page'>
+    <h3>Login Page</h3>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'DashboardPage',
+    name: 'LoginPage',
     components: {
     },
     data() {
@@ -21,6 +21,6 @@
 </script>
 
 <style lang="scss" scoped>
-  .vv-dashboard-page {
+  .vv-login-page {
   }
 </style>

@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import axios from 'axios';
 import VueAxios from 'vue-axios';
-import camelize from 'camelize';
 import { API_ROOT } from '@/shared/constants/env';
 
 Vue.use(VueAxios, axios.create({
@@ -26,8 +25,13 @@ const request = (method, url, data, config) => new Promise((resolve, reject) => 
       url,
       data,
       ...config,
-    }).then(resp => url === '/oauth/token' ? successLogin(resolve, resp) : success(resolve, resp))
-    .catch(r => error(reject, r));
+    }).then((resp) => {
+      if (url === '/oauth/token') {
+        successLogin(resolve, resp);
+      } else {
+        success(resolve, resp);
+      }
+    }).catch(r => error(reject, r));
   }
 
   return Vue.axios({
@@ -48,43 +52,21 @@ export const setAuthHeader = (token) => {
   Vue.axios.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
 
-// Add a response interceptor
-Vue.axios.interceptors.response.use(camelize, error => {
+Vue.axios.interceptors.response.use((err) => {
   let er = {};
-
-  switch(error.response.status) {
+  switch (err.response.status) {
     case 401:
-      // TODO: handle auth rejections
       window.location.href = '/auth/login';
-      localStorage.removeItem('token');
-      er = error;
+      window.localStorage.removeItem('crypto_token');
+      er = err;
       break;
-
     case 422:
-      er = error.response.data;
+      er = err.response.data;
       break;
-
     default:
-      er = error;
+      er = err;
       break;
   }
-
   return Promise.reject(er);
 });
 
-
-export const uploadFile = (url, file, mime) => fetch(`${API_PATH}/${url}`, { // Your POST endpoint
-    method: 'PUT',
-    headers: {
-      "Content-Type": "image/jpeg",
-      "Authorization": Vue.axios.defaults.headers.common.Authorization,
-      "Accept": "application/json",
-    },
-    body: file // This is the content of your file
-  }).then(
-    response => response.json() // if the response is a JSON object
-  ).then(
-    success => console.log(success) // Handle the success response object
-  ).catch(
-    error => console.log(error) // Handle the error response object
-  );

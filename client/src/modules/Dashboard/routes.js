@@ -1,6 +1,5 @@
 import store from '@/shared/store';
 import MainLayout from '@/layouts/MainLayout';
-import navigationGuard from '@/shared/utils/navigationGuard';
 
 import storeModule from './store';
 
@@ -11,16 +10,17 @@ export default {
   path: '/dashboard',
   component: MainLayout,
   beforeEnter(to, from, next) {
-    if (!store.state.dashboard) {
-      store.registerModule('dashboard', storeModule);
+    if (store.getters['global/auth/isAuthenticated']) {
+      if (!store.state.dashboard) {
+        store.registerModule('dashboard', storeModule);
+      }
+      return next();
     }
-    // eslint-disable-next-line
-    console.log('Navigation Guard', from, to);
-    navigationGuard(store, next);
+    return next('/auth/login');
   },
   children: [
     {
-      path: '/dashboard',
+      path: '',
       component: DashboardLayout,
       children: [
         {
