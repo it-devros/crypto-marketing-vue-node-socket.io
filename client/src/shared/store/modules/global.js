@@ -1,8 +1,8 @@
-import user from './user';
+import auth from './auth';
 
 export default {
   namespaced: true,
   modules: {
-    user,
+    auth,
   },
 };
