@@ -7,6 +7,8 @@ import Vuetify from 'vuetify';
 import VueCarousel from 'vue-carousel';
 import notificationMixin from '@/shared/mixins/notificationMixin';
 
+import 'vuetify/dist/vuetify.min.css';
+
 import App from './App';
 import router from './router';
 import { i18n, setLanguage } from './i18n';

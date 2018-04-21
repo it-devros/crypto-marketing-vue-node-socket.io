@@ -1,5 +1,5 @@
 module.exports = function(app) {
-    const admin = require('./admin');
+	const auth = require('./auth');
 
-    app.use('/admin', admin);
+	app.use('/auth', auth);
 };

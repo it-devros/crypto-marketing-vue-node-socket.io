@@ -12,7 +12,7 @@ const API_PATH = API_ROOT;
 
 Vue.axios.defaults.baseURL = API_PATH;
 
-const success = (resolve, response) => resolve(response.data.data);
+const success = (resolve, response) => resolve(response.data);
 const successLogin = (resolve, response) => resolve(response.data);
 const error = (reject, err) => reject(err);
 
@@ -20,27 +20,19 @@ const request = (method, url, data, config) => new Promise((resolve, reject) => 
   if (!(['get', 'post', 'put', 'patch'].includes(method))) throw new Error(`Http method ${method} does not supported`);
 
   if (['post', 'put', 'patch'].includes(method)) {
-    return Vue.axios({
-      method,
-      url,
-      data,
-      ...config,
-    }).then((resp) => {
-      if (url === '/oauth/token') {
-        successLogin(resolve, resp);
-      } else {
-        success(resolve, resp);
-      }
-    }).catch(r => error(reject, r));
+    return Vue.axios({ method, url, data, ...config, }).then((resp) => {
+      success(resolve, resp);
+    }).catch((r) => {
+      error(reject, r);
+    });
   }
 
-  return Vue.axios({
-    method,
-    url,
-    params: data,
-    ...config,
-  }).then(resp => success(resolve, resp))
-    .catch(r => error(reject, r));
+  return Vue.axios({ method, url, params: data, ...config, }).then((resp) => {
+    success(resolve, resp);
+  }).catch((r) => {
+    error(reject, r);
+  });
+  
 });
 
 export const post = (url, data, config) => request('post', url, data, config);
@@ -52,21 +44,4 @@ export const setAuthHeader = (token) => {
   Vue.axios.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
 
-Vue.axios.interceptors.response.use((err) => {
-  let er = {};
-  switch (err.response.status) {
-    case 401:
-      window.location.href = '/auth/login';
-      window.localStorage.removeItem('crypto_token');
-      er = err;
-      break;
-    case 422:
-      er = err.response.data;
-      break;
-    default:
-      er = err;
-      break;
-  }
-  return Promise.reject(er);
-});
 

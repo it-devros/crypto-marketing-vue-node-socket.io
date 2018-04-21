@@ -1,9 +1,8 @@
 <template>
-  <div class="dashboard-page-wrap">
-    <h2>Dashboard Layout</h2>
-    <div class="content-wrapper">
-      <router-view />
-    </div>
+  <div class="vv-dashboard-layout">
+    <v-container fluid>
+      <router-view></router-view>
+    </v-container>
   </div>
 </template>
 
@@ -16,6 +15,6 @@
 </script>
 
 <style lang="scss" scoped>
-  .dashboard-page-wrap {
+  .vv-dashboard-layout {
   }
 </style>

@@ -6,26 +6,41 @@ const User = mongoose.model('User');
 
 
 class AuthController {
-    constructor() {
-    }
-    
-    static signin(req) {
-        return User.load({email: req.body.email}).then((user) => {
-            if(!user){
-                throw new Error('Whoops, your email is wrong.', 'UNAUTH');
-            }
-            if (!user.comparePassword(req.body.password)) {
-                throw new Error('Whoops, your password are incorrect', 'UNAUTH');
-            }
-            let token = jwt.sign({_id: user._id}, config.secret, {
-                expiresIn: "300d"
-            });
-            return {token: token};
-        }).catch(err=>{
-            throw err;
-        });
 
-    }
+	constructor() {
+
+	}
+
+	static siginIn(req) {
+		return User.load({username: req.body.username}).then((user) => {
+			if(!user){
+				throw new Error('Whoops, your username is wrong.');
+			}
+			if (!user.comparePassword(req.body.password)) {
+				throw new Error('Whoops, your password are incorrect');
+			}
+			let token = jwt.sign({_id: user._id}, config.secret, {
+				expiresIn: "300d"
+			});
+			return {token: token};
+		}).catch((err) => {
+			throw err;
+		});
+	}
+
+	static siginUp(req) {
+		return User.load({username: req.body.username}).then((user)=>{
+			if (!user)
+				return user;
+			else
+				throw new Error('User name duplicated');
+		})
+		.then((user)=>{
+			return new User(req.body).save();
+		}).catch((err) => {
+			throw err;
+		});
+	}
 
 }
 

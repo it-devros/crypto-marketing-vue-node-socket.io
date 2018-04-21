@@ -1,4 +1,4 @@
-// import { setAuthHeader } from '@/shared/utils/http';
+import { setAuthHeader } from '@/shared/utils/http';
 
 const initialState = {
   isAuthenticated: false,
@@ -14,9 +14,19 @@ const actions = {
 
 const mutations = {
   loggedIn(state, token) {
+    window.localStorage.setItem('crypto_token', token);
     state.token = token;
+    setAuthHeader(token);
     state.isAuthenticated = true;
   },
+  checkAuth(state) {
+    const token = window.localStorage.getItem('crypto_token');
+    if (token) {
+      state.token = token;
+      setAuthHeader(token);
+      state.isAuthenticated = true;
+    }
+  }
 };
 
 export default {

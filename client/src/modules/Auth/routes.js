@@ -11,18 +11,15 @@ export default {
   component: AuthLayout,
   beforeEnter(to, from, next) {
     store.registerModule('login', storeModule);
+    if (store.getters['global/auth/isAuthenticated']) {
+      return next('/dashboard');
+    }
     return next();
   },
   children: [
     {
       path: '',
       component: LoginLayout,
-      beforeEnter(to, from, next) {
-        if (store.getters['global/auth/isAuthenticated']) {
-          return next('/dashboard');
-        }
-        return next();
-      },
       children: [
         {
           path: 'login',

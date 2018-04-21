@@ -5,6 +5,6 @@ const createEnvVariable = require('../build/utils').createEnvVariable;
 
 module.exports = merge(prodEnv, {
   NODE_ENV: '"development"',
-  API_ROOT: createEnvVariable('API_ROOT', 'http://api2.staging.volunteer-vision.com'),
+  API_ROOT: createEnvVariable('API_ROOT', 'http://localhost:8000'),
   SECURET_KEY: createEnvVariable('SECURET_KEY', '1'),
 });
