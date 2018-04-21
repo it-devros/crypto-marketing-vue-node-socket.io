@@ -1,9 +1,8 @@
 <template>
-  <div class="auth-layout-container">
-    <h1>Auth Layout</h1>
-    <div class="router-view-containter">
-      <router-view />
-    </div>
+  <div class="vv-auth-layout">
+  	<v-content>
+      <router-view></router-view>
+    </v-content>
   </div>
 </template>
 
@@ -16,5 +15,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+	.vv-auth-layout {
+	}
 </style>
 

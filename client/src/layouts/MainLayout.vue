@@ -1,20 +1,29 @@
 <template>
-  <div class="main-layout-container">
-    <h1>Main Layout</h1>
-    <div class="router-view-containter">
-      <router-view />
-    </div>
-  </div>
+	<div class="vv-main-layout">
+		<vv-header></vv-header>
+	  <v-content>
+	    <router-view></router-view>
+	  </v-content>
+	  <vv-footer></vv-footer>
+	</div>
 </template>
 
 <script>
+import VvFooter from './components/footer';
+import VvHeader from './components/header';
+
 export default {
   name: 'MainLayout',
   components: {
+  	VvFooter,
+  	VvHeader,
   },
 };
 </script>
 
 <style lang="scss" scoped>
+	.vv-main-layout {
+		
+	}
 </style>
 

@@ -1,5 +1,6 @@
 import store from '@/shared/store';
 import MainLayout from '@/layouts/MainLayout';
+import navigationGuard from '@/shared/utils/navigationGuard';
 
 import storeModule from './store';
 
@@ -10,13 +11,11 @@ export default {
   path: '/dashboard',
   component: MainLayout,
   beforeEnter(to, from, next) {
-    if (store.getters['global/auth/isAuthenticated']) {
-      if (!store.state.dashboard) {
-        store.registerModule('dashboard', storeModule);
-      }
-      return next();
+    if (!store.state.dashboard) {
+      store.registerModule('dashboard', storeModule);
     }
-    return next('/auth/login');
+    store.commit('global/auth/checkAuth');
+    navigationGuard(store, next);
   },
   children: [
     {
