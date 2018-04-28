@@ -12,7 +12,7 @@ const getters = {
 
 const actions = {
   sendLoginData: ({ commit }, payload) => {
-    
+    signUpAPI(payload);
     return signInAPI(payload).then((res) => {
       return res;
     }).catch((err) => {
