@@ -3,9 +3,9 @@ let config = require('../config');
 
 mongoose.Promise = require('bluebird');
 mongoose.connect(config.db, {useMongoClient : true}).then((res) => {
-	console.log("connected successfully");
+	console.log("Connected successfully");
 }).catch((err) => {
-	console.log("connection failed");
+	console.log("Connection failed");
 	throw err;
 });;
 

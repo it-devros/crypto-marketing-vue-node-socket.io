@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const isAuth = require('../middleware/isAuth');
-let authController = require('../controllers/authController');
+let fiatController = require('../controllers/fiatController');
 
 const runAction =  (action, req, res) => {
 	action(req, res)
@@ -17,10 +17,10 @@ const runAction =  (action, req, res) => {
 };
 
 router.get('/', (req, res) => {
-	res.json({status: "/auth is running healthy."});
+	res.json({status: "/fiat is running healthy."});
 });
 
-router.post('/signin', (req, res) => runAction(authController.siginIn, req, res));
-router.post('/signup', (req, res) => runAction(authController.siginUp, req, res));
+router.get('/all', (req, res) => runAction(fiatController.getAll, req, res));
+router.post('/save', (req, res) => runAction(fiatController.saveOne, req, res));
 
 module.exports = router;
