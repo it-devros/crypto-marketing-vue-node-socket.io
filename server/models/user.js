@@ -22,8 +22,7 @@ schema.pre('save', function(next) {
 		return next();
 	} else {
 		return next();
-	}   
-		
+	}	
 });
 
 schema.loadClass(User);

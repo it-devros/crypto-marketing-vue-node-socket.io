@@ -16,5 +16,13 @@ export default {
         text,
       });
     },
+    notifyWarning(text) {
+      this.$notify({
+        group: 'main',
+        type: 'warning',
+        title: 'Warning',
+        text,
+      });
+    },
   },
 };
