@@ -66,8 +66,11 @@
 		.my-pt-10 {
 			padding-top: 10px;
 		}
+<<<<<<< HEAD
 		.my-pt-30 {
 			padding-top: 30px;
 		}
+=======
+>>>>>>> 4be848344ebfd6213f711456864fefe33f6e64b6
 	}
 </style>
