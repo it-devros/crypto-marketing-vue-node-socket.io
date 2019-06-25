@@ -98,4 +98,4 @@ exports.createNotifierCallback = function () {
 }
 
 exports.createEnvVariable = (name, defaultValue) => process.env[name] ?
-  JSON.stringify(process.env[name]) : `'${defaultValue}'`;
+  JSON.stringify(process.env[name]) : `'${defaultValue}'`

@@ -6,7 +6,7 @@ export default {
         type: 'success',
         title: 'Success',
         text,
-      });
+      })
     },
     notifyError(text) {
       this.$notify({
@@ -14,7 +14,7 @@ export default {
         type: 'error',
         title: 'Error',
         text,
-      });
+      })
     },
     notifyWarning(text) {
       this.$notify({
@@ -22,7 +22,7 @@ export default {
         type: 'warning',
         title: 'Warning',
         text,
-      });
+      })
     },
   },
-};
+}

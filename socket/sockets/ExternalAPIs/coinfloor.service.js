@@ -1,20 +1,20 @@
-const rp = require('request-promise');
+const rp = require('request-promise')
 
 class CoinfloorService {
 
-	constructor() {
-	}
+  constructor() {
+  }
 
-	fetchCoinfloorCurrency(param) {
-		const options = {
-			method: 'GET',
-			uri: 'https://webapi.coinfloor.co.uk:8090/bist/' + param + '/ticker/',
-			json: true 
-		};
-		return rp(options);
-	}
+  fetchCoinfloorCurrency(param) {
+    const options = {
+      method: 'GET',
+      uri: 'https://webapi.coinfloor.co.uk:8090/bist/' + param + '/ticker/',
+      json: true 
+    }
+    return rp(options)
+  }
 
 }
 
 
-module.exports = new CoinfloorService();
+module.exports = new CoinfloorService()

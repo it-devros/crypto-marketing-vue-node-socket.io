@@ -7,14 +7,14 @@ export default {
   }),
   watch: {
     model(value, oldValue) {
-      if (oldValue === null && value === '') return;
-      this.$emit('input', value);
+      if (oldValue === null && value === '') return
+      this.$emit('input', value)
     },
     value(val) {
-      this.model = val;
+      this.model = val
     },
   },
   created() {
-    this.model = this.value;
+    this.model = this.value
   },
-};
+}

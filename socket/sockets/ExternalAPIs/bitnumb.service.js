@@ -1,20 +1,20 @@
-const rp = require('request-promise');
+const rp = require('request-promise')
 
 class BitnumbService {
 
-	constructor() {
-	}
+  constructor() {
+  }
 
-	fetchAllBitnumbCurrencies() {
-		const options = {
-			method: 'GET',
-			uri: 'https://api.bithumb.com/public/ticker/all',
-			json: true 
-		};
-		return rp(options);
-	}
+  fetchAllBitnumbCurrencies() {
+    const options = {
+      method: 'GET',
+      uri: 'https://api.bithumb.com/public/ticker/all',
+      json: true 
+    }
+    return rp(options)
+  }
 
 }
 
 
-module.exports = new BitnumbService();
+module.exports = new BitnumbService()

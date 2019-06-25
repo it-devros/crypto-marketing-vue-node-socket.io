@@ -1,7 +1,7 @@
 'use strict'
-const merge = require('webpack-merge');
-const prodEnv = require('./prod.env');
-const createEnvVariable = require('../build/utils').createEnvVariable;
+const merge = require('webpack-merge')
+const prodEnv = require('./prod.env')
+const createEnvVariable = require('../build/utils').createEnvVariable
 
 module.exports = merge(prodEnv, {
   NODE_ENV: '"development"',
@@ -11,4 +11,4 @@ module.exports = merge(prodEnv, {
   ONLINE_SOCKET_SERVICE: createEnvVariable('ONLINE_SOCKET_SERVICE', 'http://localhost:8001'),
   // ONLINE_SOCKET_SERVICE: createEnvVariable('ONLINE_SOCKET_SERVICE', 'http://82.165.135.219:8001'),
 
-});
+})

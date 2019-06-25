@@ -1,20 +1,20 @@
-const rp = require('request-promise');
+const rp = require('request-promise')
 
 class PoloniexService {
 
-	constructor() {
-	}
+  constructor() {
+  }
 
-	fetchAllMainCurrencies() {
-		const options = {
-			method: 'GET',
-			uri: 'https://poloniex.com/public?command=returnTicker',
-			json: true 
-		};
-		return rp(options);
-	}
+  fetchAllMainCurrencies() {
+    const options = {
+      method: 'GET',
+      uri: 'https://poloniex.com/public?command=returnTicker',
+      json: true 
+    }
+    return rp(options)
+  }
 
 }
 
 
-module.exports = new PoloniexService();
+module.exports = new PoloniexService()

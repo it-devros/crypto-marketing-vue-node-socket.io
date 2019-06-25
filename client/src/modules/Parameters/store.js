@@ -1,16 +1,16 @@
 
 
 const initialState = {
-};
+}
 
 const getters = {
-};
+}
 
 const actions = {
-};
+}
 
 const mutations = {
-};
+}
 
 
 export default {
@@ -19,4 +19,4 @@ export default {
   getters,
   actions,
   mutations,
-};
+}

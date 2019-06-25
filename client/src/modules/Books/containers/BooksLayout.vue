@@ -13,7 +13,7 @@
     name: 'BooksLayout',
     components: {
     },
-  };
+  }
 </script>
 
 <style lang="scss" scoped>

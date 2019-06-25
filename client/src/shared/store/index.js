@@ -1,9 +1,9 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
+import Vue from 'vue'
+import Vuex from 'vuex'
 
-import global from './modules/global';
+import global from './modules/global'
 
-Vue.use(Vuex);
+Vue.use(Vuex)
 
 export default new Vuex.Store({
   modules: {
@@ -13,4 +13,4 @@ export default new Vuex.Store({
   mutations: {
     REFRESH_STORE() {},
   },
-});
+})

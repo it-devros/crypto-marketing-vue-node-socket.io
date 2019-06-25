@@ -7,9 +7,9 @@
 </template>
 
 <script>
-  import VvFiatList from '../components/fiatList';
-  import VvMainList from '../components/mainList';
-  import VvCurrencyPage from './currencyPage';
+  import VvFiatList from '../components/fiatList'
+  import VvMainList from '../components/mainList'
+  import VvCurrencyPage from './currencyPage'
 
   export default {
     name: 'DashboardPage',
@@ -20,13 +20,13 @@
     },
     data() {
       return {
-      };
+      }
     },
     computed: {
     },
     methods: {
     },
-  };
+  }
 </script>
 
 <style lang="scss" scoped>

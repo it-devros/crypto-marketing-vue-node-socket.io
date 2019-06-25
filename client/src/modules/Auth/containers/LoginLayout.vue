@@ -11,7 +11,7 @@
     name: 'LoginLayout',
     components: {
     },
-  };
+  }
 </script>
 
 <style lang="scss" scoped>

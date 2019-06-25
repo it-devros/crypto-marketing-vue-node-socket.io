@@ -13,7 +13,7 @@
     name: 'FunctionsLayout',
     components: {
     },
-  };
+  }
 </script>
 
 <style lang="scss" scoped>

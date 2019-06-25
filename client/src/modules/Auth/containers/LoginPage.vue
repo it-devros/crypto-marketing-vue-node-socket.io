@@ -23,9 +23,9 @@
 </template>
 
 <script>
-  import { mapActions } from 'vuex';
-  import { validationMixin } from 'vuelidate';
-  import { required } from 'vuelidate/lib/validators';
+  import { mapActions } from 'vuex'
+  import { validationMixin } from 'vuelidate'
+  import { required } from 'vuelidate/lib/validators'
 
   export default {
     name: 'LoginPage',
@@ -38,20 +38,20 @@
       return {
         username: 'root',
         password: 'newfirst',
-      };
+      }
     },
     computed: {
       nameErrors() {
-        const errors = [];
-        if (!this.$v.username.$dirty) return errors;
-        if (!this.$v.username.required) errors.push('User Name is required.');
-        return errors;
+        const errors = []
+        if (!this.$v.username.$dirty) return errors
+        if (!this.$v.username.required) errors.push('User Name is required.')
+        return errors
       },
       passwordErrors() {
-        const errors = [];
-        if (!this.$v.password.$dirty) return errors;
-        if (!this.$v.password.required) errors.push('Password is required.');
-        return errors;
+        const errors = []
+        if (!this.$v.password.$dirty) return errors
+        if (!this.$v.password.required) errors.push('Password is required.')
+        return errors
       },
     },
     methods: {
@@ -59,25 +59,25 @@
         sendLoginData: 'sendLoginData',
       }),
       submit() {
-        this.$v.$touch();
+        this.$v.$touch()
         if (!this.$v.$error) {
           this.sendLoginData({ username: this.username, password: this.password }).then((res) => {
-            this.$store.commit('global/auth/loggedIn', res.token);
-            this.$router.push({ name: 'dashboard' });
-            this.notifySuccess('Signed in Successfully');
+            this.$store.commit('global/auth/loggedIn', res.token)
+            this.$router.push({ name: 'dashboard' })
+            this.notifySuccess('Signed in Successfully')
           }).catch((err) => {
-            console.log(err);
-            this.notifyError('Sign in error');
-          });
+            console.log(err)
+            this.notifyError('Sign in error')
+          })
         }
       },
       clear() {
-        this.$v.$reset();
-        this.username = '';
-        this.password = '';
+        this.$v.$reset()
+        this.username = ''
+        this.password = ''
       },
     },
-  };
+  }
 </script>
 
 <style lang="scss" scoped>

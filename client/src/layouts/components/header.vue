@@ -1,5 +1,5 @@
 <template>
-	<v-tabs fixed-tabs>
+  <v-tabs fixed-tabs>
     <v-avatar :tile="tile" :size="avatarSize" class="white lighten-4">
       <img src="/client/assets/logo.png" alt="logo">
     </v-avatar>
@@ -15,18 +15,18 @@ export default {
   components: {
   },
   data() {
-  	return {
+    return {
       tile: false,
       avatarSize: '50px',
-  		links: ['dashboard', 'books', 'parameters', 'functions', 'orders']
-  	};
+      links: ['dashboard', 'books', 'parameters', 'functions', 'orders']
+    }
   },
   methods: {
     goTo(link) {
-      this.$router.push({ name: link });
+      this.$router.push({ name: link })
     },
   },
-};
+}
 </script>
 
 <style lang="scss" scoped>

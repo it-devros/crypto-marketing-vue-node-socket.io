@@ -2,26 +2,26 @@ import {
   signIn as signInAPI,
   signUp as signUpAPI,
   testAuth as testAuthAPI
-} from '@/api';
+} from '@/api'
 
 const initialState = {
-};
+}
 
 const getters = {
-};
+}
 
 const actions = {
   sendLoginData: ({ commit }, payload) => {
     return signInAPI(payload).then((res) => {
-      return res;
+      return res
     }).catch((err) => {
-      throw err;
-    });
+      throw err
+    })
   },
-};
+}
 
 const mutations = {
-};
+}
 
 
 export default {
@@ -30,4 +30,4 @@ export default {
   getters,
   actions,
   mutations,
-};
+}

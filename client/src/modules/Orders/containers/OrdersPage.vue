@@ -11,13 +11,13 @@
     },
     data() {
       return {
-      };
+      }
     },
     computed: {
     },
     methods: {
     },
-  };
+  }
 </script>
 
 <style lang="scss" scoped>

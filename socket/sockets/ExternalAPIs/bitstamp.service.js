@@ -1,20 +1,20 @@
-const rp = require('request-promise');
+const rp = require('request-promise')
 
 class BitstampService {
 
-	constructor() {
-	}
+  constructor() {
+  }
 
-	fetchBitstampCurrency(param) {
-		const options = {
-			method: 'GET',
-			uri: 'https://www.bitstamp.net/api/v2/ticker/' + param,
-			json: true 
-		};
-		return rp(options);
-	}
+  fetchBitstampCurrency(param) {
+    const options = {
+      method: 'GET',
+      uri: 'https://www.bitstamp.net/api/v2/ticker/' + param,
+      json: true 
+    }
+    return rp(options)
+  }
 
 }
 
 
-module.exports = new BitstampService();
+module.exports = new BitstampService()

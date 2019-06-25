@@ -21,7 +21,7 @@
 </template>
 
 <script>
-  import { mapGetters, mapActions } from 'vuex';
+  import { mapGetters, mapActions } from 'vuex'
 
   export default {
     name: 'DashboardLayout',
@@ -33,7 +33,7 @@
         option_markets: ['All', 'Bitfinex', 'Gdax'],
         opt_market: '',
         opt_exchange: '',
-      };
+      }
     },
     methods: {
       ...mapActions('dashboard', {
@@ -46,15 +46,15 @@
     created() {
       this.connectSocket().then((res) => {
         if (res) {
-          this.notifySuccess('Web Socket API server connected');
+          this.notifySuccess('Web Socket API server connected')
         } else {
-          this.notifyWarning('Web Socket API server connected already');
+          this.notifyWarning('Web Socket API server connected already')
         }
       }).catch((err) => {
-        this.notifyError('Web Socket API server connection error');
-      });
+        this.notifyError('Web Socket API server connection error')
+      })
     },
-  };
+  }
 </script>
 
 <style lang="scss" scoped>

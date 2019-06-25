@@ -1,20 +1,20 @@
-const rp = require('request-promise');
+const rp = require('request-promise')
 
 class QuoineService {
 
-	constructor() {
-	}
+  constructor() {
+  }
 
-	fetchQuoineCurrency(param) {
-		const options = {
-			method: 'GET',
-			uri: 'https://api.quoine.com/products/' + param,
-			json: true 
-		};
-		return rp(options);
-	}
+  fetchQuoineCurrency(param) {
+    const options = {
+      method: 'GET',
+      uri: 'https://api.quoine.com/products/' + param,
+      json: true 
+    }
+    return rp(options)
+  }
 
 }
 
 
-module.exports = new QuoineService();
+module.exports = new QuoineService()

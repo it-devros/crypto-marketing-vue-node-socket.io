@@ -1,13 +1,13 @@
 
 module.exports = {
 
-	serverUrl: 'http://localhost:8000',
+  serverUrl: 'http://localhost:8000',
   // serverUrl: 'http://217.160.166.25:8000',
 
-	fiatList: ['EUR', 'GBP', 'CAD', 'ZAR', 'KRW', 'JPY', 'HKD', 'SGD'],
-	calcFiatList: ['USD', 'EUR', 'GBP', 'CAD', 'ZAR', 'KRW', 'JPY', 'HKD', 'SGD'],
+  fiatList: ['EUR', 'GBP', 'CAD', 'ZAR', 'KRW', 'JPY', 'HKD', 'SGD'],
+  calcFiatList: ['USD', 'EUR', 'GBP', 'CAD', 'ZAR', 'KRW', 'JPY', 'HKD', 'SGD'],
 
-	mainSrc : 'BTC',
+  mainSrc : 'BTC',
   mainDst : ["HUC", "XVC", "NAUT", "GRC", "SBD", "PASC", "VRC", "SJCX", "NEOS", "NMC", "BCY", "XBC", "BTM", "NOTE", "BELA", "RIC", "PPC", "OMNI", "XCP", "RADS", "AMP", "GNO", "FLDC", "BLK", "EXP", "CLAM", "XPM", "VTC", "VIA", "POT", "BTCD", "LBC", "NXC", "BCN", "EMC2", "ARDR", "PINK", "REP", "DCR", "STEEM", "NAV", "GAME", "NXT", "FLO", "BURST", "MAID", "SC", "ZRX", "GNT", "STR", "SYS", "FCT", "DOGE", "ZEC", "DASH", "STRAT", "DGB", "CVC", "XEM", "LSK", "BTS", "BCH", "XMR", "ETC", "XRP", "LTC", "ETH", "USDT"],
 
 

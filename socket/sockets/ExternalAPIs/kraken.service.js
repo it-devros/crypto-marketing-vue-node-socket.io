@@ -1,29 +1,29 @@
-const rp = require('request-promise');
+const rp = require('request-promise')
 
 class KrakenService {
 
-	constructor() {
-	}
+  constructor() {
+  }
 
-	fetchAllSymbols() {
-		const options = {
-			method: 'GET',
-			uri: 'https://api.kraken.com/0/public/AssetPairs',
-			json: true 
-		};
-		return rp(options);
-	}
+  fetchAllSymbols() {
+    const options = {
+      method: 'GET',
+      uri: 'https://api.kraken.com/0/public/AssetPairs',
+      json: true 
+    }
+    return rp(options)
+  }
 
-	fetchKrakenCurrency(param) {
-		const options = {
-			method: 'GET',
-			uri: 'https://api.kraken.com/0/public/Ticker?pair=' + param,
-			json: true 
-		};
-		return rp(options);
-	}
+  fetchKrakenCurrency(param) {
+    const options = {
+      method: 'GET',
+      uri: 'https://api.kraken.com/0/public/Ticker?pair=' + param,
+      json: true 
+    }
+    return rp(options)
+  }
 
 }
 
 
-module.exports = new KrakenService();
+module.exports = new KrakenService()

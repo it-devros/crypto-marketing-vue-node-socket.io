@@ -1,20 +1,20 @@
-const rp = require('request-promise');
+const rp = require('request-promise')
 
 class LunoService {
 
-	constructor() {
-	}
+  constructor() {
+  }
 
-	fetchAllLunoCurrency() {
-		const options = {
-			method: 'GET',
-			uri: 'https://api.mybitx.com/api/1/tickers',
-			json: true 
-		};
-		return rp(options);
-	}
+  fetchAllLunoCurrency() {
+    const options = {
+      method: 'GET',
+      uri: 'https://api.mybitx.com/api/1/tickers',
+      json: true 
+    }
+    return rp(options)
+  }
 
 }
 
 
-module.exports = new LunoService();
+module.exports = new LunoService()

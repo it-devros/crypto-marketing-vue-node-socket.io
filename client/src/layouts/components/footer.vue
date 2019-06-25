@@ -1,5 +1,5 @@
 <template>
-	<v-footer height="auto" class="grey darken-3">
+  <v-footer height="auto" class="grey darken-3">
     <v-layout row wrap justify-center>
       <v-btn color="white" flat v-for="link in links" :key="link">
         {{ link }}
@@ -17,11 +17,11 @@ export default {
   components: {
   },
   data() {
-  	return {
-  		 links: ['Home', 'About Us', 'Team', 'Services', 'Blog', 'Contact Us']
-  	};
+    return {
+       links: ['Home', 'About Us', 'Team', 'Services', 'Blog', 'Contact Us']
+    }
   },
-};
+}
 </script>
 
 <style lang="scss" scoped>

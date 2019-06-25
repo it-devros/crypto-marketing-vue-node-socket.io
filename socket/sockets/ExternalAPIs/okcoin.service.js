@@ -1,20 +1,20 @@
-const rp = require('request-promise');
+const rp = require('request-promise')
 
 class OkcoinService {
 
-	constructor() {
-	}
+  constructor() {
+  }
 
-	fetchOkcoinCurrency(param) {
-		const options = {
-			method: 'GET',
-			uri: 'https://www.okcoin.com/api/v1/ticker.do?symbol=' + param,
-			json: true 
-		};
-		return rp(options);
-	}
+  fetchOkcoinCurrency(param) {
+    const options = {
+      method: 'GET',
+      uri: 'https://www.okcoin.com/api/v1/ticker.do?symbol=' + param,
+      json: true 
+    }
+    return rp(options)
+  }
 
 }
 
 
-module.exports = new OkcoinService();
+module.exports = new OkcoinService()

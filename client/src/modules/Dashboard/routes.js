@@ -1,21 +1,21 @@
-import store from '@/shared/store';
-import MainLayout from '@/layouts/MainLayout';
-import navigationGuard from '@/shared/utils/navigationGuard';
+import store from '@/shared/store'
+import MainLayout from '@/layouts/MainLayout'
+import navigationGuard from '@/shared/utils/navigationGuard'
 
-import storeModule from './store';
+import storeModule from './store'
 
-import DashboardLayout from './containers/DashboardLayout';
-import DashboardPage from './containers/DashboardPage';
+import DashboardLayout from './containers/DashboardLayout'
+import DashboardPage from './containers/DashboardPage'
 
 export default {
   path: '/dashboard',
   component: MainLayout,
   beforeEnter(to, from, next) {
     if (!store.state.dashboard) {
-      store.registerModule('dashboard', storeModule);
+      store.registerModule('dashboard', storeModule)
     }
-    store.commit('global/auth/checkAuth');
-    navigationGuard(store, next);
+    store.commit('global/auth/checkAuth')
+    navigationGuard(store, next)
   },
   children: [
     {
@@ -30,4 +30,4 @@ export default {
       ],
     },
   ],
-};
+}

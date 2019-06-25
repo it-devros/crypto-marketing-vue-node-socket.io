@@ -1,101 +1,101 @@
 
-const Socketservice = require('./socket.service');
-const express = require('express');
-const http = require('http');
-const path = require('path');
-const internalAPIs = require('./internal.service');
+const Socketservice = require('./socket.service')
+const express = require('express')
+const http = require('http')
+const path = require('path')
+const internalAPIs = require('./internal.service')
 
-let app = express();
-let server = http.Server(app);
-let port = 8001;
+let app = express()
+let server = http.Server(app)
+let port = 8001
 
-Socketservice.run(server);
+Socketservice.run(server)
 app.get('/api/sockets', (req, res) => {
-  res.send('All Currencies APIs working');
-});
+  res.send('All Currencies APIs working')
+})
 
 // 23h
-internalAPIs.resetFiatTable();
+internalAPIs.resetFiatTable()
 setInterval(() => {
- 	internalAPIs.resetFiatTable();
-}, 1000 * 60 * 60 * 23);
+   internalAPIs.resetFiatTable()
+}, 1000 * 60 * 60 * 23)
 
 // 3s
-internalAPIs.resetMainTable();
+internalAPIs.resetMainTable()
 setInterval(() => {
- 	internalAPIs.resetMainTable();
-}, 1000 * 5);
+   internalAPIs.resetMainTable()
+}, 1000 * 5)
 
 // 3s
-internalAPIs.resetBitfinexCurrency();
+internalAPIs.resetBitfinexCurrency()
 setInterval(() => {
- 	internalAPIs.resetBitfinexCurrency();
-}, 1000 * 10);
+   internalAPIs.resetBitfinexCurrency()
+}, 1000 * 10)
 
 // 5s
-internalAPIs.resetBitflyerCurrency();
+internalAPIs.resetBitflyerCurrency()
 setInterval(() => {
- 	internalAPIs.resetBitflyerCurrency();
-}, 1000 * 5);
+   internalAPIs.resetBitflyerCurrency()
+}, 1000 * 5)
 
 // 2s
-internalAPIs.resetBitnumbCurrency();
+internalAPIs.resetBitnumbCurrency()
 setInterval(() => {
- 	internalAPIs.resetBitnumbCurrency();
- }, 1000 * 2);
+   internalAPIs.resetBitnumbCurrency()
+ }, 1000 * 2)
 
 // 65s
-internalAPIs.resetBitstampCurrency();
+internalAPIs.resetBitstampCurrency()
 setInterval(() => {
- 	internalAPIs.resetBitstampCurrency();
-}, 1000 * 65);
+   internalAPIs.resetBitstampCurrency()
+}, 1000 * 65)
 
 // 2s
-internalAPIs.resetBitchinaCurrency();
+internalAPIs.resetBitchinaCurrency()
 setInterval(() => {
- 	internalAPIs.resetBitchinaCurrency();
-}, 1000 * 2);
+   internalAPIs.resetBitchinaCurrency()
+}, 1000 * 2)
 
 // 2s
-internalAPIs.resetCoinfloorCurrency();
+internalAPIs.resetCoinfloorCurrency()
 setInterval(() => {
- 	internalAPIs.resetCoinfloorCurrency();
-}, 1000 * 2);
+   internalAPIs.resetCoinfloorCurrency()
+}, 1000 * 2)
 
 // 3s
-internalAPIs.resetGeminiCurrency();
+internalAPIs.resetGeminiCurrency()
 setInterval(() => {
- 	internalAPIs.resetGeminiCurrency();
-}, 1000 * 3);
+   internalAPIs.resetGeminiCurrency()
+}, 1000 * 3)
 
 // 3s
-internalAPIs.resetkrakenCurrency();
+internalAPIs.resetkrakenCurrency()
 setInterval(() => {
- 	internalAPIs.resetkrakenCurrency();
-}, 1000 * 3);
+   internalAPIs.resetkrakenCurrency()
+}, 1000 * 3)
 
 // 11s
-internalAPIs.resetLunoCurrency();
+internalAPIs.resetLunoCurrency()
 setInterval(() => {
- 	internalAPIs.resetLunoCurrency();
-}, 1000 * 11);
+   internalAPIs.resetLunoCurrency()
+}, 1000 * 11)
 
 // 3s
-internalAPIs.resetOkcoinCurrency();
+internalAPIs.resetOkcoinCurrency()
 setInterval(() => {
- 	internalAPIs.resetOkcoinCurrency();
-}, 1000 * 3);
+   internalAPIs.resetOkcoinCurrency()
+}, 1000 * 3)
 
 // 3s
-internalAPIs.resetQuoineCurrency();
+internalAPIs.resetQuoineCurrency()
 setInterval(() => {
- 	internalAPIs.resetQuoineCurrency();
-}, 1000 * 3);
+   internalAPIs.resetQuoineCurrency()
+}, 1000 * 3)
 
 
 server.listen(port, () => {
-  console.log('Socket API Listening on :' + port);
-});
+  console.log('Socket API Listening on :' + port)
+})
 
 
 

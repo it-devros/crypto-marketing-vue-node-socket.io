@@ -1,6 +1,6 @@
 <template>
   <div class="vv-auth-layout">
-  	<v-content>
+    <v-content>
       <router-view></router-view>
     </v-content>
   </div>
@@ -11,11 +11,11 @@ export default {
   name: 'AuthLayout',
   components: {
   },
-};
+}
 </script>
 
 <style lang="scss" scoped>
-	.vv-auth-layout {
-	}
+  .vv-auth-layout {
+  }
 </style>
 

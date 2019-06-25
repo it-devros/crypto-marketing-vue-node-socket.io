@@ -13,7 +13,7 @@
     name: 'ParametersLayout',
     components: {
     },
-  };
+  }
 </script>
 
 <style lang="scss" scoped>

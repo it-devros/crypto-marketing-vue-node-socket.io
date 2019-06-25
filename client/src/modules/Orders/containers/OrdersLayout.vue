@@ -13,7 +13,7 @@
     name: 'OrdersLayout',
     components: {
     },
-  };
+  }
 </script>
 
 <style lang="scss" scoped>
